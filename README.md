@@ -39,5 +39,5 @@ cd `dirname $0`
 21. 反引号`等同于$(),用于执行命令
 22. source ./utils.sh 用于将其他脚本加载到当前环境
 23. 一个单独的echo即可换行
-24. 
+24. 好网站: https://explainshell.com/
 
