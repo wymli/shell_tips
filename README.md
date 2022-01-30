@@ -164,3 +164,5 @@ liwm29@wymli-NB1:~/bc_sns/deploy$ echo $?
 46. () 用于声明数组, `a=(1 2 3)`,   数组长度:`echo ${#a[*]}` 遍历数组: `for ((i = 0; i < ${#a[*]}; i++));do echo ${a[$i]};done` `for i in ${a[*]};do echo $i;done`; 注意不能是for i in $a,意味$a仅仅表示a数组的第一个元素,必须`${a[*]}或${a[@]}`
 47. 如果for语句中是循环一个字符串,那么是按newline换行分隔,比如`for i in $(ls);do echo $i;done;` 这里ls命令的输出就是一行一行的字符串
 48. `checkTagProvided() {[[ ! -z "$TAG" ]]}` 函数如果没有返回值,就默认返回最后一条语句的返回值,也就是这里对$TAG字符串判空的判断
+49. `pushd`,`popd`  用于切换目录, 相比于`cd`的优点是能回到原目录,且因为是模拟堆栈,可以回溯多次. 而`cd -`就只能回最近访问的目录.
+50. `pushd $dir` 进入$dir, `popd` 返回上一次访问的目录
