@@ -166,3 +166,4 @@ liwm29@wymli-NB1:~/bc_sns/deploy$ echo $?
 48. `checkTagProvided() {[[ ! -z "$TAG" ]]}` 函数如果没有返回值,就默认返回最后一条语句的返回值,也就是这里对$TAG字符串判空的判断
 49. `pushd`,`popd`  用于切换目录, 相比于`cd`的优点是能回到原目录,且因为是模拟堆栈,可以回溯多次. 而`cd -`就只能回最近访问的目录.
 50. `pushd $dir` 进入$dir, `popd` 返回上一次访问的目录
+51. docker in docker ,一般分为在docker中启动sibling docker,还是在docker中启动child docker. 如果是兄弟docker,只需要把host上的docoker daemon用于ipc的uds(unix domain socket)mount到docker中即可,然后借助docker cli(也需要mount)或者官方提供的docker sdk来运行容器. 如果是启动child docker,就需要在docker中运行一个新的docker daemon,此时新运行的docker对host是不可见的,这种隔离性是一些ci程序所期望的.
